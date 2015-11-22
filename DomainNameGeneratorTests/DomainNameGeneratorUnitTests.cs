@@ -2,15 +2,14 @@
 {
     using System;
     using System.Text.RegularExpressions;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using DomainNameGeneratorTool;
+    using Xunit;
 
-    [TestClass]
     public class DomainNameGeneratorUnitTests
     {
         Regex regex = new Regex(@"^[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*(\.[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*)+$");
 
-        [TestMethod]
+        [Fact]
         public void DomainNameGeneratorTests()
         {
             for (int tries = 0; tries < 1000; ++tries)
@@ -19,7 +18,7 @@
                 int labels = random.Next(1, 40);
                 string domainName = RandomDomainNameGenerator.GenerateDomainName(labels);
 
-                Assert.IsTrue(regex.IsMatch(domainName), string.Format("The domain name '{0}' is not valid", domainName));
+                Assert.True(regex.IsMatch(domainName), string.Format("The domain name '{0}' is not valid", domainName));
             }
         }
     }

@@ -5,8 +5,6 @@
 
     public static class RandomWordGenerator
     {
-        private static readonly Random random = new Random((int)DateTime.Now.Ticks);
-
         public static string GenerateWord(int length)
         {
             StringBuilder stringBuilder = new StringBuilder();
