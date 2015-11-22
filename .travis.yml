@@ -5,4 +5,4 @@ install:
   - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release DomainNameGenerator.sln
-  - mono ./testrunner/xunit.runners.2.1.0/tools/xunit.console.clr4.exe ./DomainNameGeneratorTests/bin/Release/DomainNameGeneratorTests.dll
+  - mono ./testrunner/xunit.runners.2.1.0/tools/xunit.console.exe ./DomainNameGeneratorTests/bin/Release/DomainNameGeneratorTests.dll
