@@ -2,7 +2,14 @@ language: csharp
 solution: DomainNameGenerator.sln
 install:
   - nuget restore DomainNameGenerator.sln
-  - nuget install xunit.runners -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit -Version 2.1.0 -OutputDirectory testrunnerv
+  - nuget install xunit.abstractions -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.assert -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.core -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.extensibility.core -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.extensibility.execution -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.runner.visualstudio -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release DomainNameGenerator.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./DomainNameGeneratorTests/bin/Release/DomainNameGeneratorTests.dll
+  - mono ./testrunner/xunit.runners.2.1.0/tools/xunit.console.clr4.exe ./DomainNameGeneratorTests/bin/Release/DomainNameGeneratorTests.dll
