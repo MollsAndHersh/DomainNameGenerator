@@ -2,7 +2,7 @@ language: csharp
 solution: DomainNameGenerator.sln
 install:
   - nuget restore DomainNameGenerator.sln
-  - nuget install xunit -Version 2.1.0 -OutputDirectory testrunnerv
+  - nuget install xunit -Version 2.1.0 -OutputDirectory testrunner
   - nuget install xunit.abstractions -Version 2.1.0 -OutputDirectory testrunner
   - nuget install xunit.assert -Version 2.1.0 -OutputDirectory testrunner
   - nuget install xunit.core -Version 2.1.0 -OutputDirectory testrunner
